@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+:root {
+  --font-syne: 'Syne', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --bg-primary: #050505;
+  --bg-surface: #0f0f11;
+  --bg-surface-hover: #17171c;
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.25);
+}
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  font-size: 14px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: #f4f4f5;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+}
+
+/* Custom Typography */
+.font-syne { font-family: var(--font-syne); }
+.font-mono { font-family: var(--font-mono); }
+
+/* Glassmorphic Monochrome Utilities */
+.glass-panel {
+  background: rgba(15, 15, 18, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.glass-panel-interactive {
+  background: rgba(24, 24, 28, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-interactive:hover {
+  background: rgba(38, 38, 44, 0.9);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.glass-input {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15), 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Monochrome Text Gradients */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 50%, #71717a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+/* Canvas & QR container styling */
+.qr-canvas-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.qr-canvas-wrapper canvas, .qr-canvas-wrapper svg {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Button & Badge effects */
+.btn-primary {
+  background: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  border: none;
+  border-radius: 0;
+  padding: 12px 20px;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.15);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(255, 255, 255, 0.3);
+  background: #f4f4f5;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Range input styling */
+input[type="range"] {
+  accent-color: #ffffff;
+}
